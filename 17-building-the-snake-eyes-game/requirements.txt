@@ -1,4 +1,4 @@
-Flask==0.10.1
+Flask==1.0
 
 # Hello. This is Nick from the future (March 2019 to be exact). An emergency
 # addition had to be made below to fix an issue related to a recent version of
