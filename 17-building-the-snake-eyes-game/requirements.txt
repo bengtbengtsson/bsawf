@@ -7,7 +7,7 @@ Flask==0.10.1
 # The line below isn't covered on video, but it locks werkzeug to the latest
 # version that works with this course's code base. A future update video will
 # cover upgrading this package and more.
-werkzeug==0.14.1
+werkzeug==0.15.3
 
 # Application server for both development and production.
 gunicorn==19.4.5
