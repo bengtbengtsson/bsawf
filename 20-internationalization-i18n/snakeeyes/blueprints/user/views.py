@@ -44,7 +44,7 @@ def login():
             # 1) Replace 'True' below with: request.form.get('remember', False)
             # 2) Uncomment the 'remember' field in user/forms.py#LoginForm
             # 3) Add a checkbox to the login form with the id/name 'remember'
-            if u.is_active() and login_user(u, remember=True):
+            if login_user(u, remember=True) and u.is_active():
                 u.update_activity_tracking(request.remote_addr)
 
                 # Handle optionally redirecting to the next URL safely.
@@ -154,7 +154,7 @@ def settings():
 @user.route('/settings/update_credentials', methods=['GET', 'POST'])
 @login_required
 def update_credentials():
-    form = UpdateCredentialsForm(current_user)
+    form = UpdateCredentialsForm(current_user, uid=current_user.id)
 
     if form.validate_on_submit():
         new_password = request.form.get('password', '')

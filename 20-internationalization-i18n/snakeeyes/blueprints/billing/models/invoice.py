@@ -22,7 +22,6 @@ class Invoice(ResourceMixin, db.Model):
                                                   onupdate='CASCADE',
                                                   ondelete='CASCADE'),
                         index=True, nullable=False)
-    user = db.relationship('User')
 
     # Invoice details.
     plan = db.Column(db.String(128), index=True)

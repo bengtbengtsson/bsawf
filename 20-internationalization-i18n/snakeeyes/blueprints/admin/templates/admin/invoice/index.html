@@ -50,13 +50,13 @@
             </time>
           </td>
           <td>
-            <a href="{{ url_for('admin.users_edit', id=invoice.user.id) }}">
+            <a href="{{ url_for('admin.users_edit', id=invoice.users.id) }}">
               <div class="pull-left">
-                {{ account.role_icon_for(invoice.user) }}
+                {{ account.role_icon_for(invoice.users) }}
               </div>
-              <h4 class="media-heading">{{ invoice.user.username }}</h4>
+              <h4 class="media-heading">{{ invoice.users.username }}</h4>
 
-              <p class="text-muted">{{ invoice.user.email }}</p>
+              <p class="text-muted">{{ invoice.users.email }}</p>
             </a>
           </td>
           <td class="small">

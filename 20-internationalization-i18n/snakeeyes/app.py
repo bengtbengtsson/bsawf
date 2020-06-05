@@ -5,7 +5,6 @@ from logging.handlers import SMTPHandler
 import stripe
 
 from werkzeug.contrib.fixers import ProxyFix
-from werkzeug.debug import DebuggedApplication
 from flask import Flask, render_template, request
 from flask_login import current_user
 from celery import Celery
@@ -98,9 +97,6 @@ def create_app(settings_override=None):
     extensions(app)
     authentication(app, User)
     locale(app)
-
-    if app.debug:
-        app.wsgi_app = DebuggedApplication(app.wsgi_app, evalex=True)
 
     return app
 

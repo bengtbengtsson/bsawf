@@ -16,7 +16,6 @@ class CreditCard(ResourceMixin, db.Model):
                                                   onupdate='CASCADE',
                                                   ondelete='CASCADE'),
                         index=True, nullable=False)
-    user = db.relationship('User')
 
     # Card details.
     brand = db.Column(db.String(32))
